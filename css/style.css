@@ -2821,10 +2821,10 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
   color: #9ba0a2;
 }
 .apps-footer .footer-top {
-  padding: 50px 0;
+  padding: 40px 0;
 }
 .apps-footer .footer-top .apps-short-info {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .apps-footer .footer-top .apps-short-info a {
   display: inline-block;
@@ -2832,6 +2832,10 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
 .apps-footer .footer-top .apps-short-info h5 {
   margin: 0;
   text-transform: uppercase;
+}
+.apps-footer .footer-top .apps-short-info a img {
+  height: 100px;
+  width: 240px;
 }
 .apps-footer .footer-top ul {
   margin: 0;
