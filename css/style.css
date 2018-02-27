@@ -2943,31 +2943,31 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
 }
 /* 22 SUB PAGES ( 404 & Coming Soon )
 *********************************************/
-.inner-header._sub-pages .app-overlay {
-  padding-top: 172px;
-  min-height: 100vh;
-}
 
+/* terms-and-conditions & privacy-policy pages styles */
 .inner-header._sub-pages-terms .app-overlay {
   padding-top: 172px;
   min-height: 100vh;
 }
 .inner-header._sub-pages-terms .header-content h1 {
-  font-size: 2vw;
+  font-size: 30px;
   line-height: 1em;
   color: #FFF;
   margin-top: 0;
   margin-bottom: 40px;
 }
 .inner-header._sub-pages-terms .header-content p {
-  /* font-size: 35px;
-  margin-bottom: 40px;
-  font-weight: 900;
-  line-height: inherit; */
   font-size: 14px;
   text-align: justify;
+  margin-bottom: 40px;
 }
+/* END of terms-and-conditions & privacy-policy pages styles */
 
+
+.inner-header._sub-pages .app-overlay {
+  padding-top: 172px;
+  min-height: 100vh;
+}
 .inner-header._sub-pages .header-content h1 {
   font-size: 15vw;
   line-height: 1em;
