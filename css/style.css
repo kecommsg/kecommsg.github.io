@@ -2947,6 +2947,27 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
   padding-top: 172px;
   min-height: 100vh;
 }
+
+.inner-header._sub-pages-terms .app-overlay {
+  padding-top: 172px;
+  min-height: 100vh;
+}
+.inner-header._sub-pages-terms .header-content h1 {
+  font-size: 2vw;
+  line-height: 1em;
+  color: #FFF;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.inner-header._sub-pages-terms .header-content p {
+  /* font-size: 35px;
+  margin-bottom: 40px;
+  font-weight: 900;
+  line-height: inherit; */
+  font-size: 14px;
+  text-align: justify;
+}
+
 .inner-header._sub-pages .header-content h1 {
   font-size: 15vw;
   line-height: 1em;
