@@ -3110,9 +3110,9 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
     border-bottom: 1px solid #F1F1F1;
   }
   .appsLand-navbar .app-links .navbar-nav > li.mobile-size-logo {
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25); */
     z-index: 2;
-    padding: 25px 0;
+    padding: 15px 0;
   }
   .appsLand-navbar .app-links .navbar-nav > li.mobile-size-logo a {
     padding: 0;
@@ -3122,10 +3122,12 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
     background: none;
   }
   .appsLand-navbar .app-links .navbar-nav > li.mobile-size-logo img {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    /* -webkit-border-radius: 50%;
+    -moz-border-radius: 50%; */
+    /* border-radius: 50%; */
+    /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); */
+    height: 80px; 
+    width: 220px;
   }
   .appsLand-navbar .app-links .navbar-nav > li > a, .appsLand-navbar .app-links .navbar-nav > li > span {
     color: #333;
