@@ -1146,7 +1146,7 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
 
 /* 4.2 Sub Pages Header */
 .inner-header {
-  background: url(../images/bg/small-header.jpg) bottom center no-repeat fixed;
+  /* background: url(../images/bg/small-header.jpg) bottom center no-repeat fixed; */
   background-size: cover;
   color: #FFFFFF;
   position: relative;
