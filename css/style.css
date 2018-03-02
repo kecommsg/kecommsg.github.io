@@ -3315,3 +3315,9 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+#map {
+  height: 600px;
+  width: 100%;
+}
