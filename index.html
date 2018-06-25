@@ -32,6 +32,14 @@
 
     gtag('config', 'UA-115288110-1');
     </script>
+    <script type="text/javascript">
+        function hideTumbnails() {
+            $('.ug-default-button-hidepanel-tip').each(function() {
+                $(this).trigger('click');
+            });
+        }
+        window.onload = hideTumbnails;
+    </script>
 </head>
 
 <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="5" class="scrollspy-example without_bg_images">
@@ -60,8 +68,8 @@
                     </a>
                 </li>
                 <li><a href="#home">Начало</a></li>
-                <li><a href="#screenShots">Снимки</a></li>
-                <li><a href="#download">Изтегляне</a></li>
+                <li><a href="#mobile_app">Приложение</a></li>
+                <li><a href="#gallery">Галерия</a></li>
                 <li><a href="#contact">Контакти</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -117,11 +125,11 @@
 
     <!-- ScreenShots Section
     ========================================-->
-    <section class="screenShots" id="screenShots">
+    <section class="screenShots" id="mobile_app">
         <div>
             <div class="section-title style-gradient wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
                 <h2>
-                    Снимки
+                    Мобилно приложение
                 </h2>
                 <span><span></span></span>
             </div>
@@ -179,31 +187,12 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section
-    ========================================-->
-    <section class="download section-bg-img" id="download">
-        <div class="app-overlay">
-            <div class="container">
-                <div class="section-title style-gradient white-color wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                    <h2>
-                        Изтегли Bella Nails
-                    </h2>
-                    <span><span></span></span>
-                </div>
-                <div class="download-buttons">
+                <div class="download-buttons" style='margin-top: 40px;'>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="wow fadeInUp first-download-btn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="col-lg-12">
+                            <div class="wow fadeInUp first-download-btn" data-wow-duration="1s" data-wow-delay="0.5s" style='text-align: center;'>
                                 <a href="https://play.google.com/store/apps/details?id=com.appointments" class="appsLand-btn appsLand-btn-gradient appsLand-btn-larg"><span><i class="fa fa-android"></i> Google Store</span></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="wow fadeInUp third-download-btn" data-wow-duration="1s" data-wow-delay="0.75s">
-                                <a href="https://itunes.apple.com/us/app/bella-nails/id1334633506" class="appsLand-btn appsLand-btn-gradient appsLand-btn-larg"><span><i class="fa fa-apple"></i> Apple Store</span></a>
+                                <a href="https://itunes.apple.com/us/app/bella-nails/id1334633506" class="appsLand-btn appsLand-btn-gradient appsLand-btn-larg" style='min-width: 227px;'><span><i class="fa fa-apple"></i> Apple Store</span></a>
                             </div>
                         </div>
                     </div>
@@ -212,15 +201,36 @@
         </div>
     </section>
 
+    <!-- Gallery Section
+    ========================================-->
+    <section class="gallery section-bg-img" id="gallery">
+        <div class="app-overlay">
+            <div class="section-title style-gradient white-color wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                <h2>
+                    Галерия
+                </h2>
+                <span><span></span></span>
+            </div>
+            <div class="container">
+                <div id="flickrembed_76"></div><div style="position:absolute; top:-70px; display:block; text-align:center; z-index:-1;"><script src='https://flickrembed.com/embed_v2.js.rand.php?container=flickrembed_76&source=flickr&layout=responsive&input=72157697855270404&sort=2&by=album&theme=default&scale=fit&limit=500&skin=default-light&autoplay=true'></script><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section
     ========================================-->
-    <section class="contact contact__style-2 section-bg-img">
+    <section class="contact contact__style-2 section-bg-img"  id="contact">
 
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div id="flickrembed_28" style="padding-top: 50px;"></div><script src='https://flickrembed.com/embed_v2.js.rand.php?container=flickrembed_28&source=flickr&layout=responsive&input=72157698360317935&sort=2&by=album&theme=default&scale=fit&limit=500&skin=default-light&autoplay=true'></script><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
+            </div>
+        </div>
 
-        <div id="map"></div>
-
-
-        <div class="app-overlay" id="contact">
+        <div class="app-overlay">
             <div class="container">
                 <div class="section-title style-gradient white-color wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
                     <h2>
