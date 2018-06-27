@@ -1,3 +1,9 @@
+var langs = [];
+var options = $('.lang-select').find("option");
+for (var i = 0; i < options.length; i++){
+  langs.push(options[i].value);
+}
+
 $(document).on('ready', function () {
 
   var $contactForm = $('#contact_form');
@@ -33,17 +39,33 @@ $(document).on('ready', function () {
     allowHtml: true
   });
 
+  var prevLang;
+  var url = $(location).prop("href");
   $('.lang-select').on('change', function(e){
-    if (this.selectedIndex == 0){
-      window.lang.change('bg');
-    }
-    if (this.selectedIndex == 1){
-      window.lang.change('ru');
-    }
-    if (this.selectedIndex == 2){
-      window.lang.change('en');
-    }
+      window.lang.change(this.value);
+      if (url.includes('lang')) {
+        url = url.replace(prevLang, this.value);
+      } else {
+        url = url + '?lang=' + this.value;
+      }
+      prevLang = this.value;
+      history.pushState(null, null, url);
   });
+
+  var propSplited = $(location).attr('href').split('?');
+  for (var i = 0; i < propSplited.length; i++){
+    if (propSplited[i].includes('lang')) {
+      param = propSplited[i].split('=');
+      if (param.length > 1) {
+        if (langs.indexOf(param[1].substring(0,2)) > -1){
+          $(".lang-select").val(param[1].substring(0,2)).trigger("change");
+        } else {
+          $(".lang-select").val('en').trigger("change");
+        }
+      }
+    }
+  }
+
 });
 
 function iformat(icon) {
@@ -63,5 +85,3 @@ function initMap() {
   map: map
   });
 }
-
-

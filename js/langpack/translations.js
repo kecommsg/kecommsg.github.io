@@ -1,6 +1,7 @@
 Lang.prototype.pack.bg = {
 	"token": {
-		"Download":" Свали"
+		"Download":" Изтегли",
+		"home":"НАЧАЛО"
 	},
 	"regex": [
 		[/Budget/, "งบประมาณ"],
