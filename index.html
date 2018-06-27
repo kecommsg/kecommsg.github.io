@@ -18,6 +18,9 @@
 
     <link rel="shortcut icon" href="Bella_Nails_placeholder.png">
 
+    <!-- add jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
@@ -32,9 +35,19 @@
 
     gtag('config', 'UA-115288110-1');
     </script>
+
+    <!-- add language packs -->
+    <script src="js/jquery-lang.js" charset="utf-8" type="text/javascript"></script>
+    <script src="js/langpack/nonDynamic.js" charset="utf-8" type="text/javascript"></script>
+    <script src="js/langInit.js" charset="utf-8" type="text/javascript"></script>
 </head>
 
 <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="5" class="scrollspy-example without_bg_images">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
 
 <!-- navbar
 ========================================-->
@@ -59,13 +72,23 @@
                         <img alt="" src="Bella_Nails.png">
                     </a>
                 </li>
-                <li><a href="#home">Начало</a></li>
+                <li><a href="#home" lang="en">Home</a></li>
                 <li><a href="#mobile_app">Приложение</a></li>
                 <li><a href="#gallery">Галерия</a></li>
                 <li><a href="#contact">Контакти</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
+        <div>
+            <select class="selectpicker" data-width="fit">
+                <option data-content='<span class="flag-icon flag-icon-bg"></span> Български'>Български</option>
+                <option data-content='<span class="flag-icon flag-icon-ru"></span> Русский'>Русский</option>
+                <option data-content='<span class="flag-icon flag-icon-en"></span> English'>English</option>
+            </select>
+        </div>
     </div><!-- /.container-fluid -->
+    <!-- <div>
+        <a href="#lang-en" onclick="window.lang.change('en'); return false;">Switch to English</a> | <a href="#lang-en" onclick="window.lang.change('th'); return false;">Switch to Thai</a>
+    </div> -->
 </nav>
 
 <!-- Header
@@ -89,7 +112,7 @@
                             <ul class="list-inline list-unstyled header-links">
                                 <li class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                                     <a href="#mobile_app" class="appsLand-btn appsLand-btn-gradient btn-inverse scrollLink">
-                                        <span><i class="fa fa-download"></i> Изтеглете</span>
+                                        <span lang="en"><i class="fa fa-download"></i> Download</span>
                                     </a>
                                 </li>
                                 <li class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.75s">
@@ -336,7 +359,6 @@
 <link rel="stylesheet" href="css/style.min.css">
 
 <!-- start the script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 
@@ -348,7 +370,7 @@
 <script src="js/main.js"></script> -->
 
 <script src="js/plugins.min.js"></script>
-<script src="js/main.min.js"></script>
+<script src="js/main.js"></script>
 <!-- end the script -->
 </body>
 

@@ -23,6 +23,21 @@ $(document).on('ready', function () {
       }
     });
   });
+
+  //$('.selectpicker').selectpicker();
+
+
+  $('.selectpicker').on('change', function(e){
+    if (this.selectedIndex == 0){
+      window.lang.change('bg');
+    }
+    if (this.selectedIndex == 1){
+      window.lang.change('ru');
+    }
+    if (this.selectedIndex == 2){
+      window.lang.change('en');
+    }
+  });
 });
 
 
@@ -38,3 +53,5 @@ function initMap() {
   map: map
   });
 }
+
+
