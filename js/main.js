@@ -24,10 +24,16 @@ $(document).on('ready', function () {
     });
   });
 
-  //$('.selectpicker').selectpicker();
 
+  $('.lang-select').select2({
+    minimumResultsForSearch: -1,
+    width: "100%",
+    templateSelection: iformat,
+    templateResult: iformat,
+    allowHtml: true
+  });
 
-  $('.selectpicker').on('change', function(e){
+  $('.lang-select').on('change', function(e){
     if (this.selectedIndex == 0){
       window.lang.change('bg');
     }
@@ -40,6 +46,10 @@ $(document).on('ready', function () {
   });
 });
 
+function iformat(icon) {
+    var originalOption = icon.element;
+    return $('<span><i class="flag-icon ' + $(originalOption).data('icon') + '"></i> ' + icon.text + '</span>');
+}
 
 function initMap() {
   // 43.202348,27.9096177,17z

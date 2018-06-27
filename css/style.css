@@ -3321,3 +3321,17 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
   height: 600px;
   width: 100%;
 }
+
+.select2 {
+  font-size: 20px;
+  margin-top: -3px;
+}
+
+.select2 .select2-selection {
+  background: none;
+  border: none;
+}
+
+.select2 .select2-selection__arrow {
+  display: none;
+}

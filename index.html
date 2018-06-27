@@ -45,9 +45,8 @@
 <body data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="5" class="scrollspy-example without_bg_images">
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
 
 <!-- navbar
 ========================================-->
@@ -76,15 +75,15 @@
                 <li><a href="#mobile_app">Приложение</a></li>
                 <li><a href="#gallery">Галерия</a></li>
                 <li><a href="#contact">Контакти</a></li>
+                <li>
+                    <select class="lang-select" data-width="fit" style='font-size: 50px;'>
+                        <option data-icon='flag-icon-bg'> </option>
+                        <option data-icon='flag-icon-ru'> </option>
+                        <option data-icon='flag-icon-gb'> </option>
+                    </select>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
-        <div>
-            <select class="selectpicker" data-width="fit">
-                <option data-content='<span class="flag-icon flag-icon-bg"></span> Български'>Български</option>
-                <option data-content='<span class="flag-icon flag-icon-ru"></span> Русский'>Русский</option>
-                <option data-content='<span class="flag-icon flag-icon-en"></span> English'>English</option>
-            </select>
-        </div>
     </div><!-- /.container-fluid -->
     <!-- <div>
         <a href="#lang-en" onclick="window.lang.change('en'); return false;">Switch to English</a> | <a href="#lang-en" onclick="window.lang.change('th'); return false;">Switch to Thai</a>
@@ -356,11 +355,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 <!-- <link rel="stylesheet" href="css/style.css"> -->
-<link rel="stylesheet" href="css/style.min.css">
+<link rel="stylesheet" href="css/style.css">
 
 <!-- start the script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPoz-syXgWqd-7RfvkOD6OqbCJtP32G8Q&callback=initMap">
@@ -370,6 +371,7 @@
 <script src="js/main.js"></script> -->
 
 <script src="js/plugins.min.js"></script>
+
 <script src="js/main.js"></script>
 <!-- end the script -->
 </body>
