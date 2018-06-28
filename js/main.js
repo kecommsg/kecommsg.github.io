@@ -39,19 +39,17 @@ $(document).on('ready', function () {
     allowHtml: true
   });
 
-  var prevLang;
-  var url;
+  var url, prevLang, params;
   $('.lang-select').on('change', function(e){
-      url = $(location).prop("href");
-      console.log("prev url: " + url);
       window.lang.change(this.value);
+      url = $(location).prop("href");
       if (url.includes('lang')) {
-        url = url.replace(prevLang, this.value);
+        params = window.location.search;
+        url = url.split('?')[0] + params.replace(prevLang, this.value);
       } else {
         url = url + '?lang=' + this.value;
       }
       prevLang = this.value;
-      console.log('current url: ' + url);
       history.pushState(null, null, url);
   });
 
