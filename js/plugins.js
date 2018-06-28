@@ -2,7 +2,7 @@
 
 $(function () {
     "use strict";
-    
+
     // Variables
     var counter = false,
         screenShotSlider,
@@ -195,9 +195,9 @@ $(function () {
             $(this).remove();
         });
         // start WOW animation
-        new WOW().init();
+        // new WOW().init();
         // Fire the tooltip
-        $('[data-toggle="tooltip"]').tooltip();
+        // $('[data-toggle="tooltip"]').tooltip();
     });
     /*********************** [ On Window Load ] ***********************/
 

@@ -1,3 +1,9 @@
+var langs = [];
+var options = $('.lang-select').find("option");
+for (var i = 0; i < options.length; i++){
+  langs.push(options[i].value);
+}
+
 $(document).on('ready', function () {
 
   var $contactForm = $('#contact_form');
@@ -23,8 +29,49 @@ $(document).on('ready', function () {
       }
     });
   });
+
+
+  $('.lang-select').select2({
+    minimumResultsForSearch: -1,
+    width: "100%",
+    templateSelection: iformat,
+    templateResult: iformat,
+    allowHtml: true
+  });
+
+  var prevLang;
+  var url = $(location).prop("href");
+  $('.lang-select').on('change', function(e){
+      window.lang.change(this.value);
+      if (url.includes('lang')) {
+        url = url.replace(prevLang, this.value);
+      } else {
+        url = url + '?lang=' + this.value;
+      }
+      prevLang = this.value;
+      history.pushState(null, null, url);
+  });
+
+  var propSplited = $(location).attr('href').split('?');
+  for (var i = 0; i < propSplited.length; i++){
+    if (propSplited[i].includes('lang')) {
+      param = propSplited[i].split('=');
+      if (param.length > 1) {
+        if (langs.indexOf(param[1].substring(0,2)) > -1){
+          $(".lang-select").val(param[1].substring(0,2)).trigger("change");
+        } else {
+          $(".lang-select").val('en').trigger("change");
+        }
+      }
+    }
+  }
+
 });
 
+function iformat(icon) {
+    var originalOption = icon.element;
+    return $('<span><i class="flag-icon ' + $(originalOption).data('icon') + '"></i> ' + icon.text + '</span>');
+}
 
 function initMap() {
   // 43.202348,27.9096177,17z
