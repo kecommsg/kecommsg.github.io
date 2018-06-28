@@ -327,7 +327,7 @@
 		if(nodes.length == 1){
 			nodeObjArray[0].langToken = elem.data('langToken');
 		}
-		
+
         return nodeObjArray;
     };
 
@@ -356,10 +356,10 @@
                 if (defaultText) {
                     // Translate the langDefaultText
                     translation = this.translate(defaultText, lang);
-					
+
 					// if the text containing HTML tag, processing it
 					regex = /<[^>]+>/g;
-					
+
 					if(regex.test(translation)) {
 						elem.context.innerHTML = translation;
 					}else if (translation) {
