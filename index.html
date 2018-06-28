@@ -246,7 +246,7 @@
                 <div id="map"></div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
-                <div id="flickrembed_19" style="margin: 50px;"></div><script src='https://flickrembed.com/embed_v2.js.rand.php?container=flickrembed_19&source=flickr&layout=responsive&input=72157698360317935&sort=2&by=album&theme=slider&scale=fit&limit=500&skin=default-light&autoplay=false'></script><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
+                <div id="flickrembed_19" style="margin: 50px;"></div><script src='https://flickrembed.com/embed_v2.js.rand.php?container=flickrembed_19&source=flickr&layout=responsive&input=72157698360317935&sort=2&by=album&theme=slider&scale=fit&limit=500&skin=default-light&autoplay=false'></script><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
             </div>
         </div>
 
