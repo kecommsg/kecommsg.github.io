@@ -601,11 +601,11 @@
                     translation = this._regexMatch(text, lang);
                 }
 
-                if (!translation) {
-                    if (console && console.log) {
-                        console.log('Translation for "' + text + '" not found in language pack: ' + lang);
-                    }
-                }
+                // if (!translation) {
+                //     if (console && console.log) {
+                //         console.log('Translation for "' + text + '" not found in language pack: ' + lang);
+                //     }
+                // }
 
                 return translation || text;
             } else {
