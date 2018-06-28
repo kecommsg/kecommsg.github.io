@@ -40,8 +40,10 @@ $(document).on('ready', function () {
   });
 
   var prevLang;
-  var url = $(location).prop("href");
+  var url;
   $('.lang-select').on('change', function(e){
+      url = $(location).prop("href");
+      console.log("prev url: " + url);
       window.lang.change(this.value);
       if (url.includes('lang')) {
         url = url.replace(prevLang, this.value);
@@ -49,6 +51,7 @@ $(document).on('ready', function () {
         url = url + '?lang=' + this.value;
       }
       prevLang = this.value;
+      console.log('current url: ' + url);
       history.pushState(null, null, url);
   });
 
