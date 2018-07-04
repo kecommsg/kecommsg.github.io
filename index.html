@@ -18,6 +18,9 @@
 
     <link rel="shortcut icon" href="Bella_Nails_placeholder.ico">
 
+    <link rel="stylesheet" href="css/blueimp-gallery/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="css/blueimp-gallery/blueimp-gallery-indicator.css">
+
     <!-- add jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -318,14 +321,33 @@
     ========================================-->
     <section class="gallery section-bg-img" id="gallery">
         <div class="app-overlay">
-            <div class="section-title style-gradient white-color wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
-                <h2 lang="en">
-                    Gallery
-                </h2>
-                <span><span></span></span>
-            </div>
             <div class="container">
-                <div id="flickrembed_2"></div><script src='https://flickrembed.com/embed_v2.js.rand.php?container=flickrembed_2&source=flickr&layout=responsive&input=72157697855270404&sort=2&by=album&theme=slider&scale=fit&limit=500&skin=default-light&autoplay=false'></script><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
+                <div class="section-title style-gradient white-color wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                    <h2 lang="en">
+                        Gallery
+                    </h2>
+                    <span><span></span></span>
+                </div>
+                <div class="row">
+                    <div id="links" class="links"></div>
+                    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                        <div class="slides"></div>
+                        <h3 class="title"></h3>
+                        <a class="prev">‹</a>
+                        <a class="next">›</a>
+                        <a class="close">×</a>
+                        <a class="play-pause"></a>
+                        <ol class="indicator"></ol>
+                    </div>
+<!--                     <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+                        <div class="slides"></div>
+                        <h3 class="title"></h3>
+                        <a class="prev">‹</a>
+                        <a class="next">›</a>
+                        <a class="play-pause"></a>
+                    </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -460,28 +482,33 @@
 <link rel="stylesheet" href="css/style.min.css">
 
 <!-- start the script -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
-
-<!-- add language packs -->
-<!-- <script src="js/jquery-lang.js" charset="utf-8" type="text/javascript"></script> -->
-<script src="js/jquery-lang.min.js" charset="utf-8" type="text/javascript"></script>
-<script src="js/langpack/translations.min.js" charset="utf-8" type="text/javascript"></script>
-<!-- <script src="js/langpack/translations.min.js" charset="utf-8" type="text/javascript"></script> -->
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPoz-syXgWqd-7RfvkOD6OqbCJtP32G8Q&callback=initMap">
 </script>
 
-<!-- <script src="js/plugins.js"></script>
-<script src="js/main.js"></script> -->
+<!-- add language packs -->
+<!-- <script src="js/langpack/jquery-lang.js" charset="utf-8" type="text/javascript"></script> -->
+<!-- <script src="js/langpack/translations.js" charset="utf-8" type="text/javascript"></script> -->
+<script src="js/langpack/js.cookie.js" charset="utf-8" type="text/javascript"></script>
+<script src="js/langpack/jquery-lang.min.js" charset="utf-8" type="text/javascript"></script>
+<script src="js/langpack/translations.min.js" charset="utf-8" type="text/javascript"></script>
 
-<script src="js/plugins.min.js"></script>
+<!-- add Blueimp Gallery -->
+<script src="js/blueimp-gallery/blueimp-helper.js"></script>
+<script src="js/blueimp-gallery/blueimp-gallery.js"></script>
+<script src="js/blueimp-gallery/blueimp-gallery-fullscreen.js"></script>
+<script src="js/blueimp-gallery/blueimp-gallery-indicator.js"></script>
+<script src="js/blueimp-gallery/jquery.blueimp-gallery.js"></script>
 
-<script src="js/main.min.js"></script>
-<!-- end the script -->
+<script src="js/main.js"></script>
+<script src="js/plugins.js"></script>
+<!-- <script src="js/main.min.js"></script>
+<script src="js/plugins.min.js"></script> -->
+
 </body>
 
 </html>

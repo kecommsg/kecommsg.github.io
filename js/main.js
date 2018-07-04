@@ -67,6 +67,13 @@ $(document).on('ready', function () {
     }
   }
 
+  // getFlickrImages('72157697855270404');
+  // var options = {
+  //   container: '#blueimp-gallery'
+  // };
+  // console.log("imageURLs: " + imageURLs);
+  // var gallery = blueimp.Gallery(imageURLs, options);
+
 });
 
 function iformat(icon) {
@@ -87,10 +94,86 @@ function initMap() {
   });
 }
 
+function getFlickrImages(photosetId){
+  var imageURLs;
+  $.get(`https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=caaa2b7d4ee3d994e10415a9e454100a&photoset_id=${photosetId}&user_id=162776092%40N02&format=json&nojsoncallback=1&per_page=500`,
+        function(response) {
+          console.log(response);
+          console.log(response.photoset);
+          console.log(response.photoset.photo);
+          var picArray = response.photoset.photo.map((pic) => {
+            var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
+            return { uri: srcPath, thumbnail: srcPath };
+          });
+          imageURLs = picArray.map(
+            (img, index) => ({
+              title:     img.title,
+              type:      'image/jpeg',
+              href:      img.uri,
+              thumbnail: img.uri
+            })
+          );
+          var options = {
+            container: '#blueimp-gallery'
+          };
+          console.log("imageURLs: " + imageURLs);
+          var gallery = blueimp.Gallery(imageURLs, options);
+        });
+  return imageURLs;
+}
+
+$(function () {
+  'use strict'
+
+  $.ajax({
+    url: 'https://api.flickr.com/services/rest/',
+    data: {
+      format:  'json',
+      method:  'flickr.photosets.getPhotos',
+      api_key: 'caaa2b7d4ee3d994e10415a9e454100a',
+      photoset_id: '72157697855270404',
+      nojsoncallback: '1',
+      per_page: '500'
+    },
+    dataType: 'jsonp',
+    jsonp: 'jsoncallback'
+  }).done(function (result) {
+    var carouselLinks = []
+    var linksContainer = $('#links')
+    var baseUrl
+    $.each(result.photoset.photo, function (index, photo) {
+      baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
+      photo.server + '/' + photo.id + '_' + photo.secret
+      $('<a/>')
+        .append($('<img>').prop('src', baseUrl + '_s.jpg'))
+        .prop('href', baseUrl + '_b.jpg')
+        .prop('title', photo.title)
+        .attr('data-gallery', '')
+        .appendTo(linksContainer)
+      carouselLinks.push({
+        href: baseUrl + '_c.jpg',
+        title: photo.title
+      })
+    });
+
+    blueimp.Gallery(carouselLinks, {
+      container: 'blueimp-image-carousel',
+      carousel: true,
+      titleElement: 'h3',
+      titleProperty: 'title',
+      prevClass: 'prev',
+      nextClass: 'next',
+      closeClass: 'close',
+      closeOnEscape: false,
+      closeOnSlideClick: true,
+      closeOnSwipeUpOrDown: true,
+      playPauseClass: 'play-pause'
+    })
+  })
+})
+
 // Create language switcher instance
 var lang = new Lang();
-
-
 lang.init({
   /**
    * The default language of the page / app.
