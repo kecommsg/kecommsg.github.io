@@ -66,7 +66,7 @@ var options = {
     // Navigate the gallery by pressing left and right on the keyboard:
     enableKeyboardNavigation: true,
     // Close the gallery on pressing the ESC key:
-    closeOnEscape: false,
+    closeOnEscape: true,
     // Close the gallery when clicking on an empty slide area:
     closeOnSlideClick: true,
     // Close the gallery by swiping up or down:

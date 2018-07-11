@@ -1348,8 +1348,8 @@
         }
       }
       this.container = $(this.options.container)
-      console.log("container: " + $(this.options.container))
-      console.log("container lenght: " + this.container.length)
+      // console.log("container: " + $(this.options.container))
+      // console.log("container lenght: " + this.container.length)
       if (!this.container.length) {
         this.console.log(
           'blueimp Gallery: Widget container not found.',

@@ -3339,3 +3339,16 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
 .select2 .select2-selection:focus {
   outline: none;
 }
+
+.blueimp-gallery {
+  background: #fff;
+}
+
+.blueimp-gallery-carousel {
+  box-shadow: none;
+}
+
+.cust-row {
+  display: flex;
+  flex-wrap: wrap;
+}

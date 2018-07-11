@@ -138,38 +138,78 @@ $(function () {
     dataType: 'jsonp',
     jsonp: 'jsoncallback'
   }).done(function (result) {
-    var carouselLinks = []
-    var linksContainer = $('#links')
-    var baseUrl
+    var carouselLinks = [];
+    var linksContainer = $('#links');
+    var photo, baseUrl;
+    var photos = result.photoset.photo;
+    for (i = 0; i < Math.min(photos.length); i++){
+      photo = photos[i];
+      baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
+      photo.server + '/' + photo.id + '_' + photo.secret
+      if (i < 50) {
+        $('<a/>')
+          .append($('<img>').prop('src', baseUrl + '_s.jpg'))
+          .prop('href', baseUrl + '_b.jpg')
+          .prop('title', photo.title)
+          .attr('data-gallery', '')
+          .appendTo(linksContainer)
+      } else {
+        $('<a/>')
+          .append($('<img>').prop('src', baseUrl + '_s.jpg'))
+          .prop('href', baseUrl + '_b.jpg')
+          .prop('title', photo.title)
+          .prop('style', 'display: none;')
+          .attr('data-gallery', '')
+          .appendTo(linksContainer)
+      }
+    }
+  })
+
+
+  $.ajax({
+    url: 'https://api.flickr.com/services/rest/',
+    data: {
+      format:  'json',
+      method:  'flickr.photosets.getPhotos',
+      api_key: 'caaa2b7d4ee3d994e10415a9e454100a',
+      photoset_id: '72157698360317935',
+      nojsoncallback: '1',
+      per_page: '500'
+    },
+    dataType: 'jsonp',
+    jsonp: 'jsoncallback'
+  }).done(function (result) {
+    var carouselLinks = [];
+    var baseUrl;
     $.each(result.photoset.photo, function (index, photo) {
       baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
       photo.server + '/' + photo.id + '_' + photo.secret
-      $('<a/>')
-        .append($('<img>').prop('src', baseUrl + '_s.jpg'))
-        .prop('href', baseUrl + '_b.jpg')
-        .prop('title', photo.title)
-        .attr('data-gallery', '')
-        .appendTo(linksContainer)
       carouselLinks.push({
-        href: baseUrl + '_c.jpg',
+        href: baseUrl + '_b.jpg',
         title: photo.title
-      })
+      });
     });
-
+    // blueimp.Gallery(carouselLinks, {
+    //   container: 'blueimp-gallery-carousel',
+    //   carousel: true,
+    //   titleElement: 'h3',
+    //   titleProperty: 'title',
+    //   prevClass: 'prev',
+    //   nextClass: 'next',
+    //   closeClass: 'close',
+    //   closeOnEscape: false,
+    //   closeOnSlideClick: true,
+    //   closeOnSwipeUpOrDown: true,
+    //   playPauseClass: 'play-pause'
+    // });
     blueimp.Gallery(carouselLinks, {
-      container: 'blueimp-image-carousel',
+      container: '#blueimp-image-carousel',
       carousel: true,
-      titleElement: 'h3',
-      titleProperty: 'title',
-      prevClass: 'prev',
-      nextClass: 'next',
-      closeClass: 'close',
-      closeOnEscape: false,
-      closeOnSlideClick: true,
-      closeOnSwipeUpOrDown: true,
-      playPauseClass: 'play-pause'
-    })
-  })
+      stretchImages: true,
+      toggleControlsOnSlideClick: false
+    });
+  });
+
 })
 
 // Create language switcher instance

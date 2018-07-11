@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="Bella_Nails_placeholder.ico">
 
     <link rel="stylesheet" href="css/blueimp-gallery/blueimp-gallery.min.css">
-    <link rel="stylesheet" href="css/blueimp-gallery/blueimp-gallery-indicator.css">
+    <link rel="stylesheet" href="css/blueimp-gallery/blueimp-gallery-indicator.min.css">
 
     <!-- add jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -328,25 +328,20 @@
                     </h2>
                     <span><span></span></span>
                 </div>
-                <div class="row">
+            </div>
+            <div class="row">
+                <div class='col-lg-12 text-center'>
                     <div id="links" class="links"></div>
                     <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
                     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
                         <div class="slides"></div>
-                        <h3 class="title"></h3>
+                        <!-- <h3 class="title"></h3> -->
                         <a class="prev">‹</a>
                         <a class="next">›</a>
                         <a class="close">×</a>
                         <a class="play-pause"></a>
                         <ol class="indicator"></ol>
                     </div>
-<!--                     <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
-                        <div class="slides"></div>
-                        <h3 class="title"></h3>
-                        <a class="prev">‹</a>
-                        <a class="next">›</a>
-                        <a class="play-pause"></a>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -356,12 +351,23 @@
     ========================================-->
     <section class="contact contact__style-2 section-bg-img"  id="contact">
 
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="row no-gutter cust-row">
+            <div class="col-md-6 col-sm-12 col-xs-12 text-center" style="padding-right: 0px;">
                 <div id="map"></div>
             </div>
+            <!--
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div id="flickrembed_6" style="margin: 50px;"></div><script src='https://flickrembed.com/embed_v2.js.rand.php?container=flickrembed_6&source=flickr&layout=responsive&input=72157698360317935&sort=2&by=album&theme=slider&scale=fit&limit=500&skin=default-light&autoplay=false'></script><script type="text/javascript">function showpics(){var a=$("#box").val();$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+a+"&tagmode=any&format=json&jsoncallback=?",function(a){$("#images").hide().html(a).fadeIn("fast"),$.each(a.items,function(a,e){$("<img/>").attr("src",e.media.m).appendTo("#images")})})}</script>
+            </div>
+            -->
+            <div class="col-md-6 col-sm-12 col-xs-12 text-center" style="padding-left: 0px; padding-right: 0px;">
+                <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel" style="height: 100%; margin: 0 auto;">
+                    <div class="slides"></div>
+                    <!-- <h3 class="title"></h3> -->
+                    <a class="prev">‹</a>
+                    <a class="next">›</a>
+                    <a class="play-pause"></a>
+                </div>
             </div>
         </div>
 
@@ -498,11 +504,8 @@
 <script src="js/langpack/translations.min.js" charset="utf-8" type="text/javascript"></script>
 
 <!-- add Blueimp Gallery -->
-<script src="js/blueimp-gallery/blueimp-helper.js"></script>
-<script src="js/blueimp-gallery/blueimp-gallery.js"></script>
-<script src="js/blueimp-gallery/blueimp-gallery-fullscreen.js"></script>
-<script src="js/blueimp-gallery/blueimp-gallery-indicator.js"></script>
-<script src="js/blueimp-gallery/jquery.blueimp-gallery.js"></script>
+<script src="js/blueimp-gallery/blueimp-gallery.min.js"></script>
+<script src="js/blueimp-gallery/jquery.blueimp-gallery.min.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/plugins.js"></script>
