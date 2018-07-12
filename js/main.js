@@ -66,14 +66,6 @@ $(document).on('ready', function () {
       }
     }
   }
-
-  // getFlickrImages('72157697855270404');
-  // var options = {
-  //   container: '#blueimp-gallery'
-  // };
-  // console.log("imageURLs: " + imageURLs);
-  // var gallery = blueimp.Gallery(imageURLs, options);
-
 });
 
 function iformat(icon) {
@@ -92,34 +84,6 @@ function initMap() {
   position: uluru,
   map: map
   });
-}
-
-function getFlickrImages(photosetId){
-  var imageURLs;
-  $.get(`https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=caaa2b7d4ee3d994e10415a9e454100a&photoset_id=${photosetId}&user_id=162776092%40N02&format=json&nojsoncallback=1&per_page=500`,
-        function(response) {
-          console.log(response);
-          console.log(response.photoset);
-          console.log(response.photoset.photo);
-          var picArray = response.photoset.photo.map((pic) => {
-            var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
-            return { uri: srcPath, thumbnail: srcPath };
-          });
-          imageURLs = picArray.map(
-            (img, index) => ({
-              title:     img.title,
-              type:      'image/jpeg',
-              href:      img.uri,
-              thumbnail: img.uri
-            })
-          );
-          var options = {
-            container: '#blueimp-gallery'
-          };
-          console.log("imageURLs: " + imageURLs);
-          var gallery = blueimp.Gallery(imageURLs, options);
-        });
-  return imageURLs;
 }
 
 $(function () {
@@ -206,7 +170,7 @@ $(function () {
       container: '#blueimp-image-carousel',
       carousel: true,
       stretchImages: true,
-      toggleControlsOnSlideClick: false
+      toggleControlsOnSlideClick: true
     });
   });
 

@@ -3349,6 +3349,16 @@ header.appsLand-header.custom-shape-1 .app-overlay:after {
 }
 
 .cust-row {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.cust-col{
+  min-width: 15em;
+  -webkit-flex: 1 1 15em; /* this */
+  flex: 1;
 }
