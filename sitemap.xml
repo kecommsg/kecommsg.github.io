@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bellanails.bg/</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="ru"
+      href="https://bellanails.bg/?lang=ru"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://bellanails.bg/?lang=en"
+    />
+     <xhtml:link
+      rel="alternate"
+      hreflang="bg"
+      href="https://bellanails.bg/"
+    />
     <priority>1.00</priority>
   </url>
 </urlset>
