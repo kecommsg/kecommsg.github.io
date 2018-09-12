@@ -1,22 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bellanails.bg/</loc>
     <xhtml:link
       rel="alternate"
+      hreflang="bg"
+      href="https://bellanails.bg/"/>
+    <xhtml:link
+      rel="alternate"
       hreflang="ru"
-      href="https://bellanails.bg/?lang=ru"
-    />
+      href="https://bellanails.bg/?lang=ru"/>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://bellanails.bg/?lang=en"
-    />
-     <xhtml:link
-      rel="alternate"
-      hreflang="bg"
-      href="https://bellanails.bg/"
-    />
+      href="https://bellanails.bg/?lang=en"/>
     <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://bellanails.bg/terms</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bellanails.bg/privacy</loc>
+    <priority>0.80</priority>
   </url>
 </urlset>
