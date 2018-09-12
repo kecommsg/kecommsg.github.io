@@ -6,7 +6,7 @@ Lang.prototype.pack.bg = {
 		"gallery" : "галерия",
 		"contacts" : "Контакти",
 		"Nail Salon" : "Салон за маникюр и педикюр",
-		"Our goal is to provide you with high quality services and our top priority is your satisfaction." : "Наша цел е да Ви предложим висококачествени услуги, наш приоритет е Вашето удовлетворение.",
+		"Our goal is to provide you with high quality services and our top priority is your satisfaction." : "Перфектен маникюр и педикюр във Варна само на няколко клика разстояние. Bella Nails е салон за маникюр, педикюр и ноктопластика, разположен в центъра на Варна. Наша цел е да Ви предложим качествени услуги, така че да останете доволни.",
 		"Our mobile application gives you the opportunity to book an appointment at a time convenient for you." : "Мобилното ни приложение Ви предоставя възможност да запазите час през вашия телефон в удобно за вас време.",
 		"download" : "изтеглете",
 		"Contact us" : "Свържете се с нас",
